@@ -1,0 +1,28 @@
+<main class="main">
+  <div class="content">
+    <div class="left-side">
+      <h1 class="main-title">Welcome to {{ title }}</h1>
+      <p>To get started, choose one of the quizzes from the right sidebar!</p>
+      <router-outlet />
+    </div>
+    <div class="right-side">
+      <div class="content">
+        <div class="divider" role="separator" aria-label="Divider"></div>
+        <div class="quiz-group">
+          <h3>Quizzes</h3>
+          @for (item of items; track item.title) {
+          <a
+            class="quiz-link"
+            [routerLink]="item.link"
+            routerLinkActive="active"
+            rel="noopener"
+          >
+            <span>{{ item.title }}</span>
+          </a>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
